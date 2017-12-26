@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.elvis.wang</groupId>
+    <artifactId>jvm-case</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <dubbo.version>2.8.4</dubbo.version>
+        <hessian-lite.version>3.2.1-fixed-2</hessian-lite.version>
+        <!-- zookeeper -->
+        <zookeeper.version>3.4.7</zookeeper.version>
+        <zkclient.version>0.9</zkclient.version>
+        <curator.version>2.10.0</curator.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+    </dependencies>
+</project>
