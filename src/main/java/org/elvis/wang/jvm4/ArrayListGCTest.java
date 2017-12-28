@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 场景：ArrayList动态扩容导致old区不断CMS回收，但是老年代就是降不下来（应用网络，DB全部间断）
+ * 分析：
  * -Xmx500M -Xms500M -Xmn200M -XX:+UseConcMarkSweepGC
  * -XX:+UseCMSInitiatingOccupancyOnly  -XX:CMSInitiatingOccupancyFraction=70
+ * -XX:+CMSScavengeBeforeRemark
+ *
+ * jstat -gcutil [pid]
+ * jmap -histo:live [pid]
  * @author zhiqun.wang
  * @since JDK 1.7
  */
@@ -14,7 +20,7 @@ public class ArrayListGCTest {
     public static void main(String[] args){
         allocateMemory();
         try {
-            Thread.sleep(100000);
+            Thread.sleep(1000000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
