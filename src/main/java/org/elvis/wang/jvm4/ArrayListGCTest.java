@@ -10,7 +10,10 @@ import java.util.List;
  * -XX:+UseCMSInitiatingOccupancyOnly  -XX:CMSInitiatingOccupancyFraction=70
  * -XX:+CMSScavengeBeforeRemark
  *
- * jstat -gcutil [pid]
+ * jstat -gcutil <pid>  统计gc信息   jstat -gcnew <pid>:年轻代对象的信息。
+ * jstat –class<pid> : 显示加载class的数量，及所占空间等信息。
+ * jstat -compiler <pid>显示VM实时编译的数量等信息。
+ *
  * jmap -histo:live [pid]
  * @author zhiqun.wang
  * @since JDK 1.7
